@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4a00e0;
+}
+
+.textbox {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.textbox input:focus {
+    border-color: #4a00e0;
+}
+
+.remember-me {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a00e0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8e2de2;
+}
+
+.auth-options {
+    font-size: 14px;
+    color: #4a00e0;
+    margin-top: 10px;
+}
+
+.signup-link {
+    text-decoration: underline;
+    color: #4a00e0;
+    cursor: pointer;
+}
+
+.signup-link:hover {
+    color: #8e2de2;
+}
+
+.forgot-password {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    animation: slideIn 1s ease-out;
+}
+
+.info-text {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.info-text p {
+    font-size: 14px;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="login-section">
+            <h2>Login to APU AI Club</h2>
+            <form id="login-form">
+                <div class="textbox">
+                    <input type="text" placeholder="Enter your email" id="email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Enter your password" id="password" required>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember"> Remember me
+                </div>
+                <button type="submit" class="btn">Log In</button>
+                <div class="auth-options">
+                    <p><a href="sign-up.html" class="signup-link" style="text-decoration: none;">Sign Up</a> | <a href="#" class="forgot-password" style="text-decoration: none;">Forgot Password?</a></p>
+                </div>
+            </form>
+            <div class="info-text">
+                <p>Join us to stay updated on all AI events, workshops, and much more. Be part of the AI revolution!</p>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="/assets/images/login-img.png" alt="AI Club Image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('.forgot-password').addEventListener('click', () => {
+            alert("Redirecting to password recovery...");
+        });
+
+        document.querySelector('.signup-link').addEventListener('click', () => {
+            alert("Redirecting to sign up page...");
+        });
+
+        // تحقق من تسجيل الدخول
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // التحقق من اسم المستخدم وكلمة المرور
+            if (email === "student" && password === "123456") {
+                // تخزين البيانات في SessionStorage
+                sessionStorage.setItem('username', email);
+                sessionStorage.setItem('password', password);
+
+                // إعادة التوجيه إلى صفحة "حسابي"
+                window.location.href = 'author.html';
+            } else {
+                alert("Invalid username or password.");
+            }
+        });
+    </script>
+</body>
+</html>

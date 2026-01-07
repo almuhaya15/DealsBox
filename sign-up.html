@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AI Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.signup-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4a00e0;
+}
+
+.textbox {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.textbox input, .textbox select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.textbox input:focus, .textbox select:focus {
+    border-color: #4a00e0;
+}
+
+.textbox select {
+    background: #fff;
+    cursor: pointer;
+}
+
+.textbox label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a00e0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8e2de2;
+}
+
+.auth-options {
+    font-size: 14px;
+    color: #4a00e0;
+    margin-top: 10px;
+}
+
+.login-link {
+    text-decoration: underline;
+    color: #4a00e0;
+    cursor: pointer;
+}
+
+.login-link:hover {
+    color: #8e2de2;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    animation: slideIn 1s ease-out;
+}
+
+.info-text {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.info-text p {
+    font-size: 14px;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+</style>
+<body>
+
+    <div class="container">
+        <div class="signup-section">
+            <h2>Sign Up to AI Club</h2>
+            <form action="#">
+                <!-- Full Name -->
+                <div class="textbox">
+                    <input type="text" placeholder="Full Name" id="full-name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="textbox">
+                    <input type="email" placeholder="Enter your email" id="email" required>
+                </div>
+
+                <!-- TP Number -->
+                <div class="textbox">
+                    <input type="text" placeholder="Enter your TP Number" id="tp-number" required>
+                </div>
+
+                <!-- Major -->
+                <div class="textbox">
+                    <input type="text" placeholder="Enter your Major" id="major" required>
+                </div>
+
+                <!-- Semester -->
+                <div class="textbox">
+                    <label for="semester">Select Semester</label>
+                    <select id="semester" name="semester" required>
+                        <option value="1-1">Year 1 Semester 1</option>
+                        <option value="1-2">Year 1 Semester 2</option>
+                        <option value="2-1">Year 2 Semester 1</option>
+                        <option value="2-2">Year 2 Semester 2</option>
+                        <option value="3-1">Year 3 Semester 1</option>
+                        <option value="3-2">Year 3 Semester 2</option>
+                        <option value="4-1">Year 4 Semester 1</option>
+                        <option value="4-2">Year 4 Semester 2</option>
+                    </select>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="textbox">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <!-- Nationality -->
+                <div class="textbox">
+                    <input type="text" placeholder="Enter your Nationality" id="nationality" required>
+                </div>
+
+                <!-- Password -->
+                <div class="textbox">
+                    <input type="password" placeholder="Enter your password" id="password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="textbox">
+                    <input type="password" placeholder="Confirm your password" id="confirm-password" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Sign Up</button>
+
+                <div class="auth-options">
+                    <p><a href="login.html" class="login-link">Already have an account? Log In</a></p>
+                </div>
+            </form>
+
+            <div class="info-text">
+                <p>Become a part of the AI revolution! Join us to explore, learn, and stay updated on the latest AI events and innovations.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
+    <script>document.querySelector('.login-link').addEventListener('click', () => {
+    window.location.href = "index.html";  // Redirect to login page
+});
+</script>
+</body>
+</html>
